@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%  if  title =="hello" %}  
+    <title>Document</title>
+    {%else%}
+    <title>{{title}}</title>
+    {%endif%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script href="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <p>Sign up</p>
+    <form action="/login" method="POST" class="signup">
+        <div>
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div>
+            <input type="password" name="password"  placeholder="Password">
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+
+        <div>
+           <button><a href="{{url_for('signup')}}">Does't have an account click here</a></button>
+        </div>
+    </form>
+</body>
+
+</html>
